@@ -27,6 +27,7 @@
         <img
           class="el-upload-list__item-thumbnail"
           v-if="file.status !== 'uploading' && ['picture'].indexOf(listType) > -1"
+          style="cursor:pointer;"
           @click="handleClick(file)"
           :src="file.url" alt=""
         >
