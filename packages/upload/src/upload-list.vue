@@ -21,7 +21,13 @@
       <slot :file="file">
         <img
           class="el-upload-list__item-thumbnail"
-          v-if="file.status !== 'uploading' && ['picture-card', 'picture'].indexOf(listType) > -1"
+          v-if="file.status !== 'uploading' && ['picture-card'].indexOf(listType) > -1"
+          :src="file.url" alt=""
+        >
+        <img
+          class="el-upload-list__item-thumbnail"
+          v-if="file.status !== 'uploading' && ['picture'].indexOf(listType) > -1"
+          @click="handleClick(file)"
           :src="file.url" alt=""
         >
         <a class="el-upload-list__item-name" @click="handleClick(file)">
